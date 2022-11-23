@@ -23,7 +23,7 @@ namespace ExamenForm
         {
             this.id_Q = Id;
         }
-        public int Getid_Q()
+                public int Getid_Q()
         {
             return this.id_Q;
         }
@@ -43,5 +43,10 @@ namespace ExamenForm
         {
             return this.P_num;
         }    
+        //delete from db
+        public void deleteProposition(int id)
+        {
+            mdb.DeleteProposition(id);
+        }
     }
 }
