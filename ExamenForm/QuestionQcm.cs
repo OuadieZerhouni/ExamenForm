@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace ExamenForm
 {
-    internal class QuestionQcm
+    internal class QuestionQcm : Question
     {
+
+
+        private List<Proposition> propositions;
+
+        public QuestionQcm(int id, String text, int num) : base(id, num, "Qcm", text)
+        {
+            propositions = new List<Proposition>();
+        }
+
+    
     }
 }

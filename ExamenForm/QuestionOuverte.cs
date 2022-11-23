@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace ExamenForm
 {
-    internal class QuestionOuverte
+    //class QuestionOuverte that inherits from Question
+    public class QuestionOuverte : Question
     {
-    }
-}
+        
+        public QuestionOuverte(int id,String text, int num) : base(id, num,"Ouverte" , text)
+        {
+
+        }
+        //method to answer the question
+    
+}}

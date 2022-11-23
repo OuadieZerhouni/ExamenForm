@@ -8,39 +8,36 @@ namespace ExamenForm
 {
     public abstract class Question
     {
-        public void RepondreQuestion()
-        {
-            // TODO: implement
-        }
 
-        private int IdExamen;
-        private String QuestionType;
-        private String EnnonceQuestion;
+        private int id_E;
+        private String Q_type;
+        private String Q_text;
         private int NumQuestion;
 
-        public Question(int IdExamen, String EnnonceQuestion, int NumQuestion)
+        public Question(int id , int num,String type, String text)
         {
-            SetNumQuestion(NumQuestion);
-            SetIdExamen(IdExamen);
-            SetEcconceQuestion(EnnonceQuestion);
+            id_E = id;
+            Q_type = type;
+            Q_text = text;
+            NumQuestion = num;
 
         }
 
-        public void SetIdExamen(int Id)
+        public void Setid_E(int Id)
         {
-            this.IdExamen = Id;
+            this.id_E = Id;
         }
-        public int GetIdExamen()
+        public int Getid_E()
         {
-            return this.IdExamen;
+            return this.id_E;
         }
-        public void SetEcconceQuestion(String Ennonce)
+        public void SetQ_text(String Ennonce)
         {
-            this.EnnonceQuestion = Ennonce;
+            this.Q_text = Ennonce;
         }
-        public String GetEcconceQuestion()
+        public String GetQ_text()
         {
-            return this.EnnonceQuestion;
+            return this.Q_text;
         }
         public void SetNumQuestion(int NumQuestion)
         {
@@ -49,6 +46,14 @@ namespace ExamenForm
         public int GetNumQuestion()
         {
             return this.NumQuestion;
+        }
+        public void SetQ_type(String Q_type)
+        {
+            this.Q_type = Q_type;
+        }
+        public String GetQ_type()
+        {
+            return this.Q_type;
         }
     }
 }

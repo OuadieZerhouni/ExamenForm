@@ -74,7 +74,37 @@ namespace ExamenForm
         }
 
         public static String GetTypeQuestion(int id_Q){
+            cmd.Connection = cnx;
+            cmd.CommandText = "select type_Q from Question where id_Q=" + id_Q;
+            cnx.Open();
+            String type = cmd.ExecuteScalar().ToString();
+            cnx.Close();
+            return type;
 
+        }
+        public static void DeleteProposition(int id_P)
+        {
+            cmd.Connection = cnx;
+            cmd.CommandText = "delete from Proposition where id_P=" + id_P;
+            cnx.Open();
+            cmd.ExecuteNonQuery();
+            cnx.Close();
+        }
+        public static void DeleteQuestion(int id_Q)
+        {
+            cmd.Connection = cnx;
+            cmd.CommandText = "delete from Question where id_Q=" + id_Q;
+            cnx.Open();
+            cmd.ExecuteNonQuery();
+            cnx.Close();
+            if (GetTypeQuestion(id_Q) == "Qcm")
+            {
+                cmd.Connection = cnx;
+                cmd.CommandText = "delete from Proposition where id_Q=" + id_Q;
+                cnx.Open();
+                cmd.ExecuteNonQuery();
+                cnx.Close();
+            }
         }
 
         public static void DeleteExam(int id)
