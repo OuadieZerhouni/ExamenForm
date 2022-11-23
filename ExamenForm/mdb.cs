@@ -72,6 +72,21 @@ namespace ExamenForm
             cmd.ExecuteNonQuery();
             cnx.Close();
         }
+
+        public static String GetTypeQuestion(int id_Q){
+
+        }
+
+        public static void DeleteExam(int id)
+        {
+            cmd.Connection = cnx;
+            cmd.CommandText = "delete from Exam where id_E=" + id;
+            cnx.Open();
+            cmd.ExecuteNonQuery();
+            cnx.Close();
+        }
         
+
+
     }
 }
