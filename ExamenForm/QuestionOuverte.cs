@@ -10,7 +10,7 @@ namespace ExamenForm
     public class QuestionOuverte : Question
     {
         
-        public QuestionOuverte(int id,String text, int num) : base(id, num,"Ouverte" , text)
+        public QuestionOuverte(int id,int id_E,String text, int num) : base(id,id_E, num,"Ouverte" , text)
         {
 
         }

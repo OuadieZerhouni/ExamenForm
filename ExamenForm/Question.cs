@@ -9,27 +9,28 @@ namespace ExamenForm
     public abstract class Question
     {
 
-        private int id_E;
+        private int id_Q;
         private String Q_type;
         private String Q_text;
         private int NumQuestion;
 
-        public Question(int id , int num,String type, String text)
+        public Question(int id ,int id_E, int num,String type, String text)
         {
-            id_E = id;
+            id_Q = id;
             Q_type = type;
             Q_text = text;
             NumQuestion = num;
+            mdb.AddQuestion(id, id_E, num, type, text);
 
         }
 
-        public void Setid_E(int Id)
+        public void Setid_Q(int Id)
         {
-            this.id_E = Id;
+            this.id_Q = Id;
         }
-        public int Getid_E()
+        public int Getid_Q()
         {
-            return this.id_E;
+            return this.id_Q;
         }
         public void SetQ_text(String Ennonce)
         {

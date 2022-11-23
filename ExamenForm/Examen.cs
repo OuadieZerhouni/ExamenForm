@@ -31,7 +31,7 @@ namespace ExamenForm
         public void addQuestion(Question q)
         {
             questions.Add(q);
-            mdb.AddQuestion(q.Getid_E(),id, q.GetNumQuestion(), q.GetQ_type(), q.GetQ_text());
+            mdb.AddQuestion(q.Getid_Q(),id, q.GetNumQuestion(), q.GetQ_type(), q.GetQ_text());
         }
     }
 }
