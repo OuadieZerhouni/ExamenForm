@@ -33,5 +33,15 @@ namespace ExamenForm
             questions.Add(q);
             mdb.AddQuestion(q.Getid_Q(),id, q.GetQ_num(), q.GetQ_type(), q.GetQ_text());
         }
+        //getQuestionNumbers
+        public List<int> getQuestionNumbers()
+        {
+            List<int> numbers = new List<int>();
+            foreach (Question q in questions)
+            {
+                numbers.Add(q.GetQ_num());
+            }
+            return numbers;
+        }
     }
 }

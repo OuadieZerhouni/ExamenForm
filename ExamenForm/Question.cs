@@ -8,6 +8,8 @@ namespace ExamenForm
 {
     public abstract class Question
     {
+        //a global questions counter 
+        
 
         private int id_Q;
         private String Q_type;
