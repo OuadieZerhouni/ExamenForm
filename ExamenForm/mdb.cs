@@ -92,11 +92,6 @@ namespace ExamenForm
         }
         public static void DeleteQuestion(int id_Q)
         {
-            cmd.Connection = cnx;
-            cmd.CommandText = "delete from Question where id_Q=" + id_Q;
-            cnx.Open();
-            cmd.ExecuteNonQuery();
-            cnx.Close();
             if (GetTypeQuestion(id_Q) == "Qcm")
             {
                 cmd.Connection = cnx;
@@ -105,6 +100,12 @@ namespace ExamenForm
                 cmd.ExecuteNonQuery();
                 cnx.Close();
             }
+            cmd.Connection = cnx;
+            cmd.CommandText = "delete from Question where id_Q=" + id_Q;
+            cnx.Open();
+            cmd.ExecuteNonQuery();
+            cnx.Close();
+            
         }
 
         public static void DeleteExam(int id)

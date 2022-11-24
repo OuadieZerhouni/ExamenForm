@@ -8,8 +8,8 @@ namespace ExamenForm
 {
     public abstract class Question
     {
-        //a global questions counter 
-        
+        private static int QCount = 0;
+
 
         private int id_Q;
         private String Q_type;
@@ -23,6 +23,7 @@ namespace ExamenForm
             Q_text = text;
             Q_num = num;
             mdb.AddQuestion(id, id_E, num, type, text);
+            QCount++;
 
         }
 
@@ -57,6 +58,12 @@ namespace ExamenForm
         public String GetQ_type()
         {
             return this.Q_type;
+        }
+        
+        public void deleteQuestion()
+        {
+            mdb.DeleteQuestion(id_Q);
+            QCount--;
         }
     }
 }

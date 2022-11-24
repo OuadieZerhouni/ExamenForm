@@ -62,6 +62,7 @@ namespace ExamenForm
             }
             else if(titleLabel.Text == "Questions")
             {
+                ChoixDeType();
                 
             }
             
@@ -85,6 +86,10 @@ namespace ExamenForm
 
         private void confirmbtn_Click(object sender, EventArgs e)
         {
+            if(titleLabel.Text== "Question Type")
+            {
+                
+            }
 
         }
         private void loadInitial()
@@ -125,18 +130,19 @@ namespace ExamenForm
             Cancelbtn.Visible = false;
             confirmbtn.Visible = false;
             qTypeLabel.Visible = false;
-            label1.Text = "Question num";
-            label2.Text = "Question text";
+            label1.Text = "_";
+            label2.Text = "_";
+            label3.Text = "_";
+            label4.Text = "_";
         }
-        // loadjouterQuestion set all invisible except Question_type and qtypeLabel and confirmbtn and cancelbtn
-        public void loadjouterQuestion()
+        public void ChoixDeType()
         {
             titleLabel.Visible = true;
-            titleLabel.Text = "Ajouter Question";
+            titleLabel.Text = "Question Type";
             selectCombo.Visible = false;
             Question_type.Visible = true;
-            textBox1.Visible = true;
-            textBox2.Visible = true;
+            textBox1.Visible = false;
+            textBox2.Visible = false;
             textBox3.Visible = false;
             textBox4.Visible = false;
             Addbtn.Visible = false;
@@ -145,11 +151,39 @@ namespace ExamenForm
             Cancelbtn.Visible = true;
             confirmbtn.Visible = true;
             qTypeLabel.Visible = true;
+            qTypeLabel.Text = "Question Type";
             label1.Text = "_";
             label2.Text = "_";
             label3.Text = "_";
             label4.Text = "_";
         }
+
+        //funcition addQCM thant make textbox1 visible and confirme btn visible
+        public void addQCM()
+        {
+            titleLabel.Visible = true;
+            titleLabel.Text = "QCM";
+            selectCombo.Visible = false;
+            Question_type.Visible = false;
+            textBox1.Visible = true;
+            textBox2.Visible = true;
+            textBox3.Visible = true;
+            textBox4.Visible = true;
+            Addbtn.Visible = false;
+            deletebtn.Visible = false;
+            modifybtn.Visible = false;
+            Cancelbtn.Visible = true;
+            confirmbtn.Visible = true;
+            qTypeLabel.Visible = true;
+            qTypeLabel.Text = "QCM";
+            label1.Text = "_";
+            label2.Text = "_";
+            label3.Text = "_";
+            label4.Text = "_";
+        }
+        
+
+
         
         private void Fill_Q(ComboBox combo)
         {
