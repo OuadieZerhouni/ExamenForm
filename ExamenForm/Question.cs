@@ -12,14 +12,14 @@ namespace ExamenForm
         private int id_Q;
         private String Q_type;
         private String Q_text;
-        private int NumQuestion;
+        private int Q_num;
 
         public Question(int id ,int id_E, int num,String type, String text)
         {
             id_Q = id;
             Q_type = type;
             Q_text = text;
-            NumQuestion = num;
+            Q_num = num;
             mdb.AddQuestion(id, id_E, num, type, text);
 
         }
@@ -40,13 +40,13 @@ namespace ExamenForm
         {
             return this.Q_text;
         }
-        public void SetNumQuestion(int NumQuestion)
+        public void SetQ_num(int Q_num)
         {
-            this.NumQuestion = NumQuestion;
+            this.Q_num = Q_num;
         }
-        public int GetNumQuestion()
+        public int GetQ_num()
         {
-            return this.NumQuestion;
+            return this.Q_num;
         }
         public void SetQ_type(String Q_type)
         {

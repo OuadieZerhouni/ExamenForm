@@ -31,6 +31,15 @@ namespace ExamenForm
             propositions.Find(x => x.Getid_Q() == id).deleteProposition(id);
             propositions.Remove(propositions.Find(x => x.Getid_Q() == id));
         }
+        public List<Proposition> getPropositions()
+        {
+            return propositions;
+        }
+        
+        public String getPropositionText(int id)
+        {
+            return propositions.Find(x => x.Getid_Q() == id).GetP_text();
+        }
         
 
     
