@@ -107,6 +107,7 @@ namespace ExamenForm
             modifybtn.Visible = false;
             Cancelbtn.Visible = false;
             confirmbtn.Visible = false;
+            qTypeLabel.Visible = false;
             label1.Text = "_";
             label2.Text = "_";
             label3.Text = "_";
