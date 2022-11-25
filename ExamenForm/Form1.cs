@@ -75,7 +75,7 @@ namespace ExamenForm
         {
             if(titleLabel.Text == "Créer Exam")
             {
-                Exm= new Examen(1, textBox2.Text, textBox1.Text);
+                Exm= new Examen(textBox2.Text, textBox1.Text);
                 LoadQuestionInitial();
 
             }
