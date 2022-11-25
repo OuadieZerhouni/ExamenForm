@@ -15,6 +15,7 @@ namespace ExamenForm
         public QuestionQcm(int id,int id_E, int num, String text) : base(id,id_E, num, "Qcm", text)
         {
             propositions = new List<Proposition>();
+            mdb.AddQuestion(id, id_E, num, "Qcm", text);
         }
         public void addProposition(int id , String text, int num)
         {
