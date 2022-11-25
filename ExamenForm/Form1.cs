@@ -135,10 +135,10 @@ namespace ExamenForm
                 
             }
             else if(titleLabel.Text == "Ajouter QCM")
-            {
-                int Qnum=int.Parse(textBox1.Text);
+            {   
+                int Q_num=int.Parse(textBox1.Text);
                 int id_Q = new Random().Next(0000, 9999);
-                Exm.addQuestion(id_Q,Qnum,"QCM",textBox2.Text );
+                Exm.addQuestion(id_Q,Q_num,"QCM",textBox2.Text );
                 
             }
             else if(titleLabel.Text == "Ajouter Prop"){
