@@ -3,7 +3,7 @@ namespace ExamenForm
     public partial class Form1 : Form
     {
     private Examen Exm;
-    private int Qnum=1;
+    private int id_Q=1 ;
 
 
         public Form1()
@@ -100,7 +100,9 @@ namespace ExamenForm
             }
             else if(titleLabel.Text == "Ajouter QCM")
             {
-                Exm.addQuestion()
+                int Qnum=int.Parse(textBox1.Text);
+                Exm.addQuestion(id_Q,Qnum,"QCM",textBox2.Text );
+                id_Q++;
 
                 
             }
@@ -122,8 +124,8 @@ namespace ExamenForm
             Cancelbtn.Visible = false;
             confirmbtn.Visible = false;
             qTypeLabel.Visible = false;
-            label1.Text = "_";
-            label2.Text = "_";
+            label1.Text = "Theme";
+            label2.Text = "date";
             label3.Text = "_";
             label4.Text = "_";
         }
