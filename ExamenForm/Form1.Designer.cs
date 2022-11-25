@@ -51,7 +51,7 @@
             // selectCombo
             // 
             this.selectCombo.FormattingEnabled = true;
-            this.selectCombo.Location = new System.Drawing.Point(96, 47);
+            this.selectCombo.Location = new System.Drawing.Point(132, 47);
             this.selectCombo.Name = "selectCombo";
             this.selectCombo.Size = new System.Drawing.Size(208, 23);
             this.selectCombo.TabIndex = 0;
@@ -59,7 +59,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(96, 124);
+            this.textBox1.Location = new System.Drawing.Point(132, 124);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(208, 23);
             this.textBox1.TabIndex = 1;
@@ -67,7 +67,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(96, 164);
+            this.textBox2.Location = new System.Drawing.Point(132, 164);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(208, 23);
             this.textBox2.TabIndex = 2;
@@ -75,7 +75,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(96, 204);
+            this.textBox3.Location = new System.Drawing.Point(132, 204);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(208, 23);
             this.textBox3.TabIndex = 3;
@@ -83,7 +83,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(96, 244);
+            this.textBox4.Location = new System.Drawing.Point(132, 244);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(208, 23);
             this.textBox4.TabIndex = 4;
@@ -92,7 +92,7 @@
             // Question_type
             // 
             this.Question_type.FormattingEnabled = true;
-            this.Question_type.Location = new System.Drawing.Point(96, 83);
+            this.Question_type.Location = new System.Drawing.Point(132, 83);
             this.Question_type.Name = "Question_type";
             this.Question_type.Size = new System.Drawing.Size(208, 23);
             this.Question_type.TabIndex = 5;
@@ -216,7 +216,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 342);
+            this.ClientSize = new System.Drawing.Size(573, 342);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.Cancelbtn);
             this.Controls.Add(this.label2);
