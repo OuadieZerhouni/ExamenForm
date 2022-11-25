@@ -24,6 +24,25 @@ namespace ExamenForm
 
         private void selectCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if(selectCombo.Text!="")
+            {
+                int Qnum=int.Parse(selectCombo.Text);
+            Question q = Exm.getQuestionByNum(Qnum);
+            textBox1.Visible = true;
+            textBox1.Text = q.GetQ_num().ToString();
+            textBox2.Visible = true;
+            textBox2.Text = q.GetQ_text();
+            modifybtn.Visible = true;
+            deletebtn.Visible = true;
+            label1.Visible = true;
+             label1.Text = "Num de Question:";
+            label2.Visible = true;
+            label2.Text = "Ennonce de Question:";
+            }
+            else
+            {
+                LoadQuestionInitial();
+            }
 
         }
 
@@ -76,6 +95,20 @@ namespace ExamenForm
 
         private void modifybtn_Click(object sender, EventArgs e)
         {
+            //modify question of num in textbox1 text with the text of the textbox 2
+            int Qnum = int.Parse(textBox1.Text);
+            QuestionQcm q =(QuestionQcm) Exm.getQuestionByNum(Qnum);
+            q.SetQ_text(textBox2.Text);
+            String type = q.GetQ_type();
+            if(type=="QCM"){
+                LoadAddProp(q.GetNumProp(),q.GetQ_num());
+                titleLabel.Text = "modifier Propostion";
+                textBox1.Text = q.getPropositionText(1);
+                textBox2.Text = q.getPropositionText(2);
+                textBox3.Text = q.getPropositionText(3);
+                textBox4.Text = q.getPropositionText(4);
+
+            }
 
         }
 
@@ -94,6 +127,10 @@ namespace ExamenForm
                     LaodAddQCM();
                     
                 }
+                else{
+                    LoadAddOueverte();
+
+                }
                 
                 
             }
@@ -102,10 +139,46 @@ namespace ExamenForm
                 int Qnum=int.Parse(textBox1.Text);
                 int id_Q = new Random().Next(0000, 9999);
                 Exm.addQuestion(id_Q,Qnum,"QCM",textBox2.Text );
-
-
-
                 
+            }
+            else if(titleLabel.Text == "Ajouter Prop"){
+                int Qnum=int.Parse(SelectLabel.Text);
+                QuestionQcm q =(QuestionQcm) Exm.getQuestionByNum(Qnum);
+                int id_Q= q.Getid_Q();
+
+                int id_P = new Random().Next(0000, 9999);
+                q.addProposition(id_P, textBox1.Text, 1);
+                id_P= new Random().Next(0000, 9999);
+                q.addProposition(id_P, textBox2.Text, 2);
+                if(textBox3.Visible)
+                {
+                    id_P= new Random().Next(0000, 9999);
+                    q.addProposition(id_P, textBox3.Text, 3);
+                }
+                if(textBox4.Visible)
+                {
+                    id_P= new Random().Next(0000, 9999);
+                    q.addProposition(id_P, textBox4.Text, 4);
+                }
+
+                LoadQuestionInitial();
+            }
+            else if(titleLabel.Text == "Ajouter Question Oueverte")
+            {
+                int Qnum=int.Parse(textBox1.Text);
+                int id_Q = new Random().Next(0000, 9999);
+                Exm.addQuestion(id_Q,Qnum,"Oueverte",textBox2.Text );
+                LoadQuestionInitial();
+            }
+            else if(titleLabel.Text == "modifier Propostion")
+            {
+                int Qnum=int.Parse(textBox1.Text);
+                QuestionQcm q =(QuestionQcm) Exm.getQuestionByNum(Qnum);
+                q.setPropositionText(1,textBox1.Text);
+                q.setPropositionText(2,textBox2.Text);
+                q.setPropositionText(3,textBox3.Text);
+                q.setPropositionText(4,textBox4.Text);
+                LoadQuestionInitial();
             }
 
         }
@@ -130,7 +203,6 @@ namespace ExamenForm
             label3.Text = "_";
             label4.Text = "_";
         }
-        // function LoadQuestionInitial set all invisible except SelectCombo and SelectLabel and addbtn
         private void LoadQuestionInitial()
         {
             titleLabel.Visible = true;
@@ -183,6 +255,7 @@ namespace ExamenForm
             titleLabel.Visible = true;
             titleLabel.Text = "Ajouter QCM";
             selectCombo.Visible = false;
+            SelectLabel.Visible =false;
             Question_type.Visible = false;
             textBox1.Visible = true;
             textBox2.Visible = true;
@@ -193,7 +266,6 @@ namespace ExamenForm
             modifybtn.Visible = false;
             Cancelbtn.Visible = true;
             confirmbtn.Visible = true;
-            SelectLabel.Visible =false;
             qTypeLabel.Visible = true;
             qTypeLabel.Text = "QCM";
             label1.Text = "Num de Question:";
@@ -201,7 +273,11 @@ namespace ExamenForm
             label3.Text = "Nbre de Prop (2-4):";
             label4.Text = "_";
         }
-        private void LoadAddProp(int i){
+        private void LoadAddProp(int i,int Qnum){
+            titleLabel.Visible = true;
+            titleLabel.Text = "Ajouter Prop";
+            SelectLabel.Visible = true;
+            SelectLabel.Text =Qnum.ToString();
             if(i==2)
             {
                 textBox3.Visible = false;
@@ -225,6 +301,30 @@ namespace ExamenForm
 
 
 
+        }
+        //LoadAddOueverte
+        public void LoadAddOueverte()
+        {
+            titleLabel.Visible = true;
+            titleLabel.Text = "Ajouter Question Oueverte";
+            selectCombo.Visible = false;
+            SelectLabel.Visible =false;
+            Question_type.Visible = false;
+            textBox1.Visible = true;
+            textBox2.Visible = true;
+            textBox3.Visible = false;
+            textBox4.Visible = false;
+            Addbtn.Visible = false;
+            deletebtn.Visible = false;
+            modifybtn.Visible = false;
+            Cancelbtn.Visible = true;
+            confirmbtn.Visible = true;
+            qTypeLabel.Visible = true;
+            qTypeLabel.Text = "Question Oueverte";
+            label1.Text = "Num de Question:";
+            label2.Text = "Enoncé:";
+            label3.Text = "_";
+            label4.Text = "_";
         }
         
 

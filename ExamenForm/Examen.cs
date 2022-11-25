@@ -46,5 +46,14 @@ namespace ExamenForm
             }
             return numbers;
         }
+        public Question getQuestionByNum(int num)
+        {
+            foreach (Question q in questions)
+            {
+                if (q.GetQ_num() == num)
+                    return (Question)q;
+            }
+            return null;
+        }
     }
 }

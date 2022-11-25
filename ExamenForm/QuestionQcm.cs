@@ -36,9 +36,17 @@ namespace ExamenForm
             return propositions;
         }
         
-        public String getPropositionText(int id)
+        public String getPropositionText(int Num)
         {
-            return propositions.Find(x => x.Getid_Q() == id).GetP_text();
+            return propositions.Find(x => x.Getid_Q() == Num).GetP_text();
+        }
+        public int GetNumProp()
+        {
+            return propositions.Count;
+        }     
+        public void setPropositionText(int num, String text)
+        {
+            propositions.Find(x => x.GetP_num() == num).SetP_text(text);
         }
         
 
