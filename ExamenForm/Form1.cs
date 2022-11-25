@@ -187,6 +187,7 @@ namespace ExamenForm
             titleLabel.Visible = true;
             titleLabel.Text = "Créer Exam";
             selectCombo.Visible = false;
+            SelectLabel.Visible = false;
             Question_type.Visible = false;
             textBox1.Visible = true;
             textBox2.Visible = true;
@@ -232,6 +233,7 @@ namespace ExamenForm
             titleLabel.Text = "Type de question";
             selectCombo.Visible = false;
             Question_type.Visible = true;
+            Fill_type(Question_type);
             textBox1.Visible = false;
             textBox2.Visible = false;
             textBox3.Visible = false;
@@ -259,6 +261,7 @@ namespace ExamenForm
             Question_type.Visible = false;
             textBox1.Visible = true;
             textBox2.Visible = true;
+            textBox2.Text = "";
             textBox3.Visible = true;
             textBox4.Visible = false;
             Addbtn.Visible = false;

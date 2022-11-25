@@ -12,9 +12,9 @@ namespace ExamenForm
         String theme;
         String date;
         List<Question> questions;
-        public Examen(int id, String date, String theme)
+        public Examen( String date, String theme)
         {
-            this.id = id;
+            this.id = new Random().Next(1, 1000);
             this.date = date;
             this.theme = theme;
             questions = new List<Question>();
