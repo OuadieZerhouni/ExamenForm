@@ -3,6 +3,7 @@ namespace ExamenForm
     public partial class Form1 : Form
     {
     private Examen Exm;
+    private int Qnum=1;
 
 
         public Form1()
@@ -81,13 +82,26 @@ namespace ExamenForm
 
         private void Cancelbtn_Click(object sender, EventArgs e)
         {
+            LoadQuestionInitial();
 
         }
 
         private void confirmbtn_Click(object sender, EventArgs e)
         {
-            if(titleLabel.Text== "Question Type")
+            if(titleLabel.Text== "Type de question")
             {
+                if(Question_type.Text == "QCM")
+                {
+                    LaodAddQCM();
+                    
+                }
+                
+                
+            }
+            else if(titleLabel.Text == "Ajouter QCM")
+            {
+                Exm.addQuestion()
+
                 
             }
 
@@ -130,6 +144,7 @@ namespace ExamenForm
             modifybtn.Visible = false;
             Cancelbtn.Visible = false;
             confirmbtn.Visible = false;
+            SelectLabel.Visible = false;
             qTypeLabel.Visible = false;
             label1.Text = "_";
             label2.Text = "_";
@@ -139,7 +154,7 @@ namespace ExamenForm
         public void ChoixDeType()
         {
             titleLabel.Visible = true;
-            titleLabel.Text = "Question Type";
+            titleLabel.Text = "Type de question";
             selectCombo.Visible = false;
             Question_type.Visible = true;
             textBox1.Visible = false;
@@ -152,34 +167,35 @@ namespace ExamenForm
             Cancelbtn.Visible = true;
             confirmbtn.Visible = true;
             qTypeLabel.Visible = true;
-            qTypeLabel.Text = "Question Type";
+            qTypeLabel.Text = "Type de question";
             label1.Text = "_";
             label2.Text = "_";
             label3.Text = "_";
             label4.Text = "_";
         }
 
-        //funcition addQCM thant make textbox1 visible and confirme btn visible
-        public void addQCM()
+
+        public void LaodAddQCM()
         {
             titleLabel.Visible = true;
-            titleLabel.Text = "QCM";
+            titleLabel.Text = "Ajouter QCM";
             selectCombo.Visible = false;
             Question_type.Visible = false;
             textBox1.Visible = true;
             textBox2.Visible = true;
             textBox3.Visible = true;
-            textBox4.Visible = true;
+            textBox4.Visible = false;
             Addbtn.Visible = false;
             deletebtn.Visible = false;
             modifybtn.Visible = false;
             Cancelbtn.Visible = true;
             confirmbtn.Visible = true;
+            SelectLabel.Visible =false;
             qTypeLabel.Visible = true;
             qTypeLabel.Text = "QCM";
-            label1.Text = "_";
-            label2.Text = "_";
-            label3.Text = "_";
+            label1.Text = "Num de Question:";
+            label2.Text = "Enoncé:";
+            label3.Text = "Nbre de Proposition:";
             label4.Text = "_";
         }
         

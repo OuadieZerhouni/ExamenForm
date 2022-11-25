@@ -12,7 +12,7 @@ namespace ExamenForm
 
         private List<Proposition> propositions;
 
-        public QuestionQcm(int id,int id_E, String text, int num) : base(id,id_E, num, "Qcm", text)
+        public QuestionQcm(int id,int id_E, int num, String text) : base(id,id_E, num, "Qcm", text)
         {
             propositions = new List<Proposition>();
         }

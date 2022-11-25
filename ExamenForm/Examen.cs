@@ -28,11 +28,14 @@ namespace ExamenForm
             this.theme = theme;
             mdb.ModifyExam(id, date, theme);
         }
-        public void addQuestion(Question q)
+        public void addQuestion(int id ,int id_E, int num,String type, String text)
         {
-            questions.Add(q);
-            mdb.AddQuestion(q.Getid_Q(),id, q.GetQ_num(), q.GetQ_type(), q.GetQ_text());
-        }
+            if(type == "Qcm")
+            {
+                questions.Add(new QuestionQcm(id,id_E, num, text));
+            }
+            
+        }   
         //getQuestionNumbers
         public List<int> getQuestionNumbers()
         {
