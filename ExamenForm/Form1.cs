@@ -3,7 +3,6 @@ namespace ExamenForm
     public partial class Form1 : Form
     {
     private Examen Exm;
-    private int id_Q=1 ;
 
 
         public Form1()
@@ -101,8 +100,10 @@ namespace ExamenForm
             else if(titleLabel.Text == "Ajouter QCM")
             {
                 int Qnum=int.Parse(textBox1.Text);
+                int id_Q = new Random().Next(0000, 9999);
                 Exm.addQuestion(id_Q,Qnum,"QCM",textBox2.Text );
-                id_Q++;
+
+
 
                 
             }
@@ -197,8 +198,33 @@ namespace ExamenForm
             qTypeLabel.Text = "QCM";
             label1.Text = "Num de Question:";
             label2.Text = "Enoncé:";
-            label3.Text = "Nbre de Proposition:";
+            label3.Text = "Nbre de Prop (2-4):";
             label4.Text = "_";
+        }
+        private void LoadAddProp(int i){
+            if(i==2)
+            {
+                textBox3.Visible = false;
+                textBox4.Visible = false;
+            }
+            else if(i==3)
+            {
+                textBox3.Visible = true;
+                textBox4.Visible = false;
+            }
+            else if(i==4)
+            {
+                textBox3.Visible = true;
+                textBox4.Visible = true;
+            }
+            
+            label1.Text = "P-1";
+            label2.Text = "P-2";
+            label3.Text = "P-3";
+            label4.Text = "P-4";
+
+
+
         }
         
 
@@ -219,5 +245,6 @@ namespace ExamenForm
             combo.Items.Add("QCM");
             combo.Items.Add("Ouverte");
         }
+        
     }
 }

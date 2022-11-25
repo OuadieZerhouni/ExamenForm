@@ -10,10 +10,10 @@ namespace ExamenForm
 {
     internal class mdb
     {
-        static string chaine = @"Data Source=localhost;Initial Catalog=BDGED_copy;Integrated Security=True";
+        static string chaine = @"Data Source=localhost;Initial Catalog=Exams;Integrated Security=True";
         static SqlConnection cnx = new SqlConnection(chaine);
         static SqlCommand cmd = new SqlCommand();
-        static SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+        static SqlDataAdapter adapter = new SqlDataAdapter(cmd);                  
 
         public static DataTable GetTable(string sql)
         {
