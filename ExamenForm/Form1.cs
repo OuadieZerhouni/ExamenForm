@@ -139,6 +139,7 @@ namespace ExamenForm
                 int Q_num = Convert.ToInt32(textBox1.Text);
                 int id_Q = new Random().Next(0000, 9999);
                 Exm.addQuestion(id_Q,Q_num,"QCM",textBox2.Text );
+                LoadAddProp(int.Parse(textBox3.Text),Q_num);
                 
             }
             else if(titleLabel.Text == "Ajouter Prop"){
