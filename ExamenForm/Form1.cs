@@ -260,6 +260,7 @@ namespace ExamenForm
             SelectLabel.Visible =false;
             Question_type.Visible = false;
             textBox1.Visible = true;
+            textBox1.Text = "";
             textBox2.Visible = true;
             textBox2.Text = "";
             textBox3.Visible = true;
