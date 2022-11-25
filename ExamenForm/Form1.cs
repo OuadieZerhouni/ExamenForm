@@ -26,7 +26,7 @@ namespace ExamenForm
         {
             if(selectCombo.Text!="")
             {
-                int Qnum=int.Parse(selectCombo.Text);
+                int Qnum=Convert.ToInt32(selectCombo.Text);
             Question q = Exm.getQuestionByNum(Qnum);
             textBox1.Visible = true;
             textBox1.Text = q.GetQ_num().ToString();
@@ -96,7 +96,7 @@ namespace ExamenForm
         private void modifybtn_Click(object sender, EventArgs e)
         {
             //modify question of num in textbox1 text with the text of the textbox 2
-            int Qnum = int.Parse(textBox1.Text);
+            int Qnum = Convert.ToInt32(textBox1.Text);
             QuestionQcm q =(QuestionQcm) Exm.getQuestionByNum(Qnum);
             q.SetQ_text(textBox2.Text);
             String type = q.GetQ_type();
@@ -135,14 +135,14 @@ namespace ExamenForm
                 
             }
             else if(titleLabel.Text == "Ajouter QCM")
-            {   
-                int Q_num=int.Parse(textBox1.Text);
+            {   //convert to int the textbox1 text
+                int Q_num = Convert.ToInt32(textBox1.Text);
                 int id_Q = new Random().Next(0000, 9999);
                 Exm.addQuestion(id_Q,Q_num,"QCM",textBox2.Text );
                 
             }
             else if(titleLabel.Text == "Ajouter Prop"){
-                int Qnum=int.Parse(SelectLabel.Text);
+                int Qnum=Convert.ToInt32(SelectLabel.Text);
                 QuestionQcm q =(QuestionQcm) Exm.getQuestionByNum(Qnum);
                 int id_Q= q.Getid_Q();
 
@@ -165,14 +165,14 @@ namespace ExamenForm
             }
             else if(titleLabel.Text == "Ajouter Question Oueverte")
             {
-                int Qnum=int.Parse(textBox1.Text);
+                int Qnum=Convert.ToInt32(textBox1.Text);
                 int id_Q = new Random().Next(0000, 9999);
                 Exm.addQuestion(id_Q,Qnum,"Oueverte",textBox2.Text );
                 LoadQuestionInitial();
             }
             else if(titleLabel.Text == "modifier Propostion")
             {
-                int Qnum=int.Parse(textBox1.Text);
+                int Qnum=Convert.ToInt32(textBox1.Text);
                 QuestionQcm q =(QuestionQcm) Exm.getQuestionByNum(Qnum);
                 q.setPropositionText(1,textBox1.Text);
                 q.setPropositionText(2,textBox2.Text);
