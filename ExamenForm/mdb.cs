@@ -27,7 +27,7 @@ namespace ExamenForm
         public static void AddExam(int id ,string date, string theme)
         {
             cmd.Connection = cnx;
-            cmd.CommandText = "insert into Exam values(" + id + ",'" + date + "','" + theme + "')";
+            cmd.CommandText = "insert into Exam values(" + id + ",'" + date + "','" + theme + "');";
             cnx.Open();
             cmd.ExecuteNonQuery();
             cnx.Close();
@@ -35,7 +35,7 @@ namespace ExamenForm
         public static void AddQuestion(int id_Q, int id_E, int num_Q, string type_Q, string text_Q)
         {
             cmd.Connection = cnx;
-            cmd.CommandText = "insert into Question(id_Q,id_E,num_Q,type_Q,text_Q) values(" + id_Q + "," + id_E + "," + num_Q + ",'" + type_Q + "','" + text_Q + "')";
+            cmd.CommandText = "insert into Question(id_Q,id_E,num_Q,type_Q,text_Q) values(" + id_Q + "," + id_E + "," + num_Q + ",'" + type_Q + "','" + text_Q + "');";
             cnx.Open();
             cmd.ExecuteNonQuery();
             cnx.Close();
@@ -43,7 +43,7 @@ namespace ExamenForm
         public static void AddProposition(int id_P, int id_Q, int num_P, string text_P)
         {
             cmd.Connection = cnx;
-            cmd.CommandText = "insert into Proposition values(" + id_P + "," + id_Q + "," + num_P + ",'" + text_P + "')";
+            cmd.CommandText = "insert into Proposition values(" + id_P + "," + id_Q + "," + num_P + ",'" + text_P + "');";
             cnx.Open();
             cmd.ExecuteNonQuery();
             cnx.Close();
