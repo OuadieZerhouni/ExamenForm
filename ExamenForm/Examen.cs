@@ -20,7 +20,6 @@ namespace ExamenForm
             questions = new List<Question>();
             mdb.AddExam(id, date, theme);
         }
-        //setexam to modify exam 
         public void setExam(int id, String date, String theme)
         {
             this.id = id;
@@ -42,7 +41,6 @@ namespace ExamenForm
             
             
         }   
-        //getQuestionNumbers
         public List<int> getQuestionNumbers()
         {
             List<int> numbers = new List<int>();

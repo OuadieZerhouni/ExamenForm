@@ -334,8 +334,8 @@ namespace ExamenForm
             qTypeLabel.Text = "Question Oueverte";
             label1.Text = "Num de Question:";
             label2.Text = "Enoncé:";
-            label3.Text = "_";
-            label4.Text = "_";
+            label3.Text = "";
+            label4.Text = "";
         }
 
 

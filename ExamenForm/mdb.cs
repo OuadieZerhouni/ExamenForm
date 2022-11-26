@@ -35,7 +35,7 @@ namespace ExamenForm
         public static void AddQuestion(int id_Q, int id_E, int num_Q, string type_Q, string text_Q)
         {
             cmd.Connection = cnx;
-            cmd.CommandText = "insert into Question values(" + id_Q + "," + id_E + "," + num_Q + ",'" + type_Q + "','" + text_Q + "')";
+            cmd.CommandText = "insert into Question(id_Q,id_E,num_Q,type_Q,text_Q) values(" + id_Q + "," + id_E + "," + num_Q + ",'" + type_Q + "','" + text_Q + "')";
             cnx.Open();
             cmd.ExecuteNonQuery();
             cnx.Close();
