@@ -30,7 +30,7 @@ namespace ExamenForm
             cmd.CommandText = "insert into Exam values(" + id + ",'" + date + "','" + theme + "');";
             cnx.Open();
             cmd.ExecuteNonQuery();
-            cnx.Close();
+            
         }
         public static void AddQuestion(int id_Q, int id_E, int num_Q, string type_Q, string text_Q)
         {
