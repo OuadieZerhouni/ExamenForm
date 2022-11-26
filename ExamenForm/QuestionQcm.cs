@@ -12,11 +12,16 @@ namespace ExamenForm
 
         private List<Proposition> propositions;
 
-        public QuestionQcm(int id,int id_E, int num, String text) : base(id,id_E, num, "Qcm", text)
+        public QuestionQcm(int id,int id_E, int num, String text):base()
         {
+            this.id_Q = id;
+            this.Q_num = num;
+            this.Q_text = text;
+            this.Q_type = "Qcm";
             propositions = new List<Proposition>();
-            mdb.AddQuestion(id, id_E, num, "Qcm", text);
+            mdb.AddQuestion(id_Q, id_E, Q_num, Q_type, Q_text);
         }
+       
         public void addProposition(int id , String text, int num)
         {
             propositions.Add(new Proposition(id,base.Getid_Q(), text, num));

@@ -10,19 +10,13 @@ namespace ExamenForm
     {
 
 
-        private int id_Q;
-        private String Q_type;
-        private String Q_text;
-        private int Q_num;
+        protected int id_Q;
+        protected String Q_type;
+        protected String Q_text;
+        protected int Q_num;
 
-        public Question(int id ,int id_E, int num,String type, String text)
+        public Question()
         {
-            id_Q = id;
-            Q_type = type;
-            Q_text = text;
-            Q_num = num;
-            mdb.AddQuestion(id, id_E, num, type, text);
-           
         }
 
         public void Setid_Q(int Id)
