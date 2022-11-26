@@ -8,7 +8,6 @@ namespace ExamenForm
 {
     public abstract class Question
     {
-        private static int QCount = 0;
 
 
         private int id_Q;
@@ -23,8 +22,7 @@ namespace ExamenForm
             Q_text = text;
             Q_num = num;
             mdb.AddQuestion(id, id_E, num, type, text);
-            QCount++;
-
+           
         }
 
         public void Setid_Q(int Id)
@@ -63,7 +61,6 @@ namespace ExamenForm
         public void deleteQuestion()
         {
             mdb.DeleteQuestion(id_Q);
-            QCount--;
         }
     }
 }
