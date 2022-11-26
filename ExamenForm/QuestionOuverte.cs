@@ -10,10 +10,20 @@ namespace ExamenForm
     public class QuestionOuverte : Question
     {
         
-        public QuestionOuverte(int id,int id_E, int num,String text) : base(id,id_E, num,"Ouverte" , text)
+        public QuestionOuverte(int id,int id_E, int num,String text) : base()
         {
+            this.id_Q = id;
+            this.Q_num = num;
+            this.Q_text = text;
+            this.Q_type = "Ouverte";
+            mdb.AddQuestion(id_Q, id_E, Q_num, Q_type, Q_text);
 
         }
-        //method to answer the question
-    
+        public void modifyQuestion(int id,int id_E, int num, String text)
+        {
+            this.id_Q = id;
+            this.Q_num = num;
+            this.Q_text = text;
+            mdb.ModifyQuestion(id_Q,id_E, Q_num, Q_type, Q_text);
+        }    
 }}
