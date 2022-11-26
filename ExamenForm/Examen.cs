@@ -31,7 +31,7 @@ namespace ExamenForm
         public void addQuestion(int id_Q , int num,String type, String text)
         {
             if(type == "Qcm")
-            {   QuestionQcm q = new QuestionQcm(id_Q, id, num, text);
+            {   QuestionQcm q = new QuestionQcm(id_Q, this.id, num, text);
                 questions.Add(q);
             }
             else if(type=="Ouverte")
