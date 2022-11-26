@@ -36,7 +36,7 @@ namespace ExamenForm
             }
             else if(type=="Ouverte")
             {
-                QuestionOuverte q = new QuestionOuverte(id_Q,this.id, num, text);
+                QuestionOuverte q = new QuestionOuverte(id_Q, this.id, num, text);
                 questions.Add(q);
             }
             
@@ -59,6 +59,10 @@ namespace ExamenForm
                     return (Question)q;
             }
             return null;
+        }
+        public int Getid_E()
+        {
+            return id;
         }
     }
 }
