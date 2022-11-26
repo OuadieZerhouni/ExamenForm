@@ -76,6 +76,8 @@ namespace ExamenForm
             if (titleLabel.Text == "Créer Exam")
             {
                 Exm = new Examen(textBox2.Text, textBox1.Text);
+                mdb.AddQuestion(7742, Exm.Getid_E(), 2, "Ouverte","sdfsdf");
+
                 LoadQuestionInitial();
 
             }
