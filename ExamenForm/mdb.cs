@@ -27,8 +27,11 @@ namespace ExamenForm
         public static void AddExam(int id ,string date, string theme)
         {
             cmd.Connection = cnx;
-            cmd.CommandText = "insert into Exam values(" + id + ",'" + date + "','" + theme + "');";
+            cmd.CommandText = "insert into Exam values(@id,@date,@theme)";
             cnx.Open();
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@date", date);
+            cmd.Parameters.AddWithValue("@theme", theme);
             cmd.ExecuteNonQuery();
             
         }
@@ -48,8 +51,13 @@ namespace ExamenForm
         public static void AddProposition(int id_P, int id_Q, int num_P, string text_P)
         {
             cmd.Connection = cnx;
-            cmd.CommandText = "insert into Proposition values(" + id_P + "," + id_Q + "," + num_P + ",'" + text_P + "');";
+            cmd.CommandText = "insert into Proposition values(@id_P,@id_Q,@num_P,@text_P);";
             cnx.Open();
+            cmd.Parameters.AddWithValue("@id_P", id_P);
+            cmd.Parameters.AddWithValue("@id_Q", id_Q);
+            cmd.Parameters.AddWithValue("@num_P", num_P);
+            cmd.Parameters.AddWithValue("@text_P", text_P);
+
             cmd.ExecuteNonQuery();
             cnx.Close();
         }
@@ -64,24 +72,36 @@ namespace ExamenForm
         public static void ModifyQuestion(int id_Q, int id_E, int num_Q, string type_Q, string text_Q)
         {
             cmd.Connection = cnx;
-            cmd.CommandText = "update Question set id_E=" + id_E + ",num_Q=" + num_Q + ",type_Q='" + type_Q + "',text_Q='" + text_Q + "' where id_Q=" + id_Q;
+            cmd.CommandText = "update Question set id_E=@id_E,num_Q=@num_Q,type_Q=@type_Q,text_Q=@text_Q where id_Q=@id_Q";
             cnx.Open();
+            cmd.Parameters.AddWithValue("@id_Q", id_Q);
+            cmd.Parameters.AddWithValue("@id_E", id_E);
+            cmd.Parameters.AddWithValue("@num_Q", num_Q);
+            cmd.Parameters.AddWithValue("@type_Q", type_Q);
+            cmd.Parameters.AddWithValue("@text_Q", text_Q);
             cmd.ExecuteNonQuery();
             cnx.Close();
         }
         public static void ModifyProposition(int id_P, int id_Q, int num_P, string text_P)
         {
             cmd.Connection = cnx;
-            cmd.CommandText = "update Proposition set id_Q=" + id_Q + ",num_P=" + num_P + ",text_P='" + text_P + "' where id_P=" + id_P;
+            cmd.CommandText = "update Proposition set id_Q=@id_Q,num_P=@num_P,text_P=@text_P where id_P=@id_P";
             cnx.Open();
+            cmd.Parameters.AddWithValue("@id_P", id_P);
+            cmd.Parameters.AddWithValue("@id_Q", id_Q);
+            cmd.Parameters.AddWithValue("@num_P", num_P);
+            cmd.Parameters.AddWithValue("@text_P", text_P);
+
+        
             cmd.ExecuteNonQuery();
             cnx.Close();
         }
 
         public static String GetTypeQuestion(int id_Q){
             cmd.Connection = cnx;
-            cmd.CommandText = "select type_Q from Question where id_Q=" + id_Q;
+            cmd.CommandText = "select type_Q from Question where id_Q=@id_Q";
             cnx.Open();
+            cmd.Parameters.AddWithValue("@id_Q", id_Q);
             String type = cmd.ExecuteScalar().ToString();
             cnx.Close();
             return type;
@@ -90,8 +110,9 @@ namespace ExamenForm
         public static void DeleteProposition(int id_P)
         {
             cmd.Connection = cnx;
-            cmd.CommandText = "delete from Proposition where id_P=" + id_P;
+            cmd.CommandText = "delete from Proposition where id_P=@id_P";
             cnx.Open();
+            cmd.Parameters.AddWithValue("@id_P", id_P);
             cmd.ExecuteNonQuery();
             cnx.Close();
         }
@@ -116,8 +137,9 @@ namespace ExamenForm
         public static void DeleteExam(int id)
         {
             cmd.Connection = cnx;
-            cmd.CommandText = "delete from Exam where id_E=" + id;
+            cmd.CommandText = "delete from Exam where id_E=@id";
             cnx.Open();
+            cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();
             cnx.Close();
         }
