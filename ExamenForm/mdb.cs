@@ -39,6 +39,7 @@ namespace ExamenForm
         public static void AddQuestion(int id_Q, int id_E, int num_Q, string type_Q, string text_Q)
         {
             cmd.Connection = cnx;
+            cmd.Parameters.Clear();
             cmd.CommandText = "insert into Question values(@id_Q,@id_E,@num_Q,@type_Q,@text_Q);";
             cnx.Open();
             cmd.Parameters.AddWithValue("@id_Q", id_Q);
@@ -52,6 +53,7 @@ namespace ExamenForm
         public static void AddProposition(int id_P, int id_Q, int num_P, string text_P)
         {
             cmd.Connection = cnx;
+            cmd.Parameters.Clear();
             cmd.CommandText = "insert into Proposition values(@id_P,@id_Q,@num_P,@text_P);";
             cnx.Open();
             cmd.Parameters.AddWithValue("@id_P", id_P);
