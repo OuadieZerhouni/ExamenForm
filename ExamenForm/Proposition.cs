@@ -8,16 +8,18 @@ namespace ExamenForm
 {
     internal class Proposition
     {
+        private int id_P;
         private int id_Q;
         private String P_text;
         private int P_num;
 
-        public Proposition(int id,int id_Q, String text, int num)
+        public Proposition(int id_P,int id_Q, String text, int num)
         {
-            id_Q = id;
-            P_text = text;
-            P_num = num;
-            mdb.AddProposition(id,id_Q, num, text);
+            this.id_P = id_P;
+            this.id_Q = id_Q;
+            this.P_text = text;
+            this.P_num = num;
+            mdb.AddProposition(id_P,id_Q, num, text);
         }
         public void Setid_Q(int Id)
         {
