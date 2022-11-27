@@ -168,14 +168,7 @@ namespace ExamenForm
 
                 LoadQuestionInitial();
             }
-            else if (titleLabel.Text == "Ajouter Question Oueverte")
-            {
-                int Qnum = Convert.ToInt32(textBox1.Text);
-                int id_Q = new Random().Next(0000, 9999);
-                Exm.addQuestion(id_Q, Qnum, "Oueverte", textBox2.Text);
-                LoadQuestionInitial();
-            }
-            else if (titleLabel.Text == "modifier Propostion")
+             else if (titleLabel.Text == "modifier Propostion")
             {
                 int Qnum = Convert.ToInt32(textBox1.Text);
                 QuestionQcm q = (QuestionQcm)Exm.getQuestionByNum(Qnum);
@@ -185,6 +178,14 @@ namespace ExamenForm
                 q.setPropositionText(4, textBox4.Text);
                 LoadQuestionInitial();
             }
+            else if (titleLabel.Text == "Ajouter Question Oueverte")
+            {
+                int Qnum = Convert.ToInt32(textBox1.Text);
+                int id_Q = new Random().Next(0000, 9999);
+                Exm.addQuestion(id_Q, Qnum, "Ouverte", textBox2.Text);
+                LoadQuestionInitial();
+            }
+           
 
         }
         private void loadInitial()
