@@ -17,6 +17,7 @@ namespace ExamenForm
 
         public Question()
         {
+            
         }
 
         public void Setid_Q(int Id)

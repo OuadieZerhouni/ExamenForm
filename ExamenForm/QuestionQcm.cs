@@ -10,7 +10,7 @@ namespace ExamenForm
     {
 
 
-        private List<Proposition> propositions;
+        private List<Proposition> propositions=new List<Proposition>();
 
         public QuestionQcm(int id,int id_E, int num, String text):base()
         {
@@ -18,13 +18,13 @@ namespace ExamenForm
             this.Q_num = num;
             this.Q_text = text;
             this.Q_type = "Qcm";
-            propositions = new List<Proposition>();
             mdb.AddQuestion(id_Q, id_E, Q_num, Q_type, Q_text);
         }
        
         public void addProposition(int id , String text, int num)
         {
-            propositions.Add(new Proposition(id,base.Getid_Q(), text, num));
+            Proposition p=new Proposition(id,id_Q, text, num);
+            propositions.Add(p);
         }
         //modify propositions
         public void modifyProposition(int id, String text, int num)
@@ -54,6 +54,7 @@ namespace ExamenForm
         {
             propositions.Find(x => x.GetP_num() == num).SetP_text(text);
         }
+        
         
 
     
