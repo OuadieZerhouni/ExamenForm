@@ -23,7 +23,7 @@ namespace ExamenForm
        
         public void addProposition(int id , String text, int num)
         {
-            Proposition p=new Proposition(id,id_Q, text, num);
+            Proposition p=new Proposition(id,this.id_Q, text, num);
             propositions.Add(p);
         }
         //modify propositions
