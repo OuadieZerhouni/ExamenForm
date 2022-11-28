@@ -46,7 +46,7 @@ namespace ExamenForm
         {
             return propositions.Find(x => x.GetP_num() == Num).GetP_text();
         }
-        public int GetNumProp()
+        public int GetNbrProp()
         {
             return propositions.Count;
         }     

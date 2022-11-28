@@ -116,12 +116,20 @@ namespace ExamenForm
             if (type == "QCM")
             {   
                 QuestionQcm q1 = (QuestionQcm)q;
-                LoadAddProp(q.GetNumProp(), q.GetQ_num());
+                LoadAddProp(q1.GetNbrProp(), q.GetQ_num());
                 titleLabel.Text = "modifier Propostion";
-                textBox1.Text = q.getPropositionText(1);
-                textBox2.Text = q.getPropositionText(2);
-                textBox3.Text = q.getPropositionText(3);
-                textBox4.Text = q.getPropositionText(4);
+                textBox1.Text = q1.getPropositionText(1);
+                textBox2.Text = q1.getPropositionText(2);
+                if(q1.GetNbrProp() == 3)
+                {
+                    textBox3.Text = q1.getPropositionText(3);
+                }
+                else if(q1.GetNbrProp() == 4)
+                {
+                    textBox3.Text = q1.getPropositionText(3);
+                    textBox4.Text = q1.getPropositionText(4);
+                }
+                
 
             }
 
