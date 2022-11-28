@@ -342,6 +342,8 @@ namespace ExamenForm
             SelectLabel.Text = Qnum.ToString();
             label1.Text = "P-1";
             label2.Text = "P-2";
+            label3.Text = "";
+            label4.Text = "";
             modifybtn.Visible = false;
             deletebtn.Visible = false;
             Addbtn.Visible = false;
