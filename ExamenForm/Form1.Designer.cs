@@ -51,7 +51,7 @@
             // selectCombo
             // 
             this.selectCombo.FormattingEnabled = true;
-            this.selectCombo.Location = new System.Drawing.Point(132, 47);
+            this.selectCombo.Location = new System.Drawing.Point(177, 47);
             this.selectCombo.Name = "selectCombo";
             this.selectCombo.Size = new System.Drawing.Size(208, 23);
             this.selectCombo.TabIndex = 0;
@@ -59,7 +59,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(132, 124);
+            this.textBox1.Location = new System.Drawing.Point(177, 124);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(208, 23);
             this.textBox1.TabIndex = 1;
@@ -67,7 +67,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(132, 164);
+            this.textBox2.Location = new System.Drawing.Point(177, 164);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(208, 23);
             this.textBox2.TabIndex = 2;
@@ -75,7 +75,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(132, 204);
+            this.textBox3.Location = new System.Drawing.Point(177, 204);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(208, 23);
             this.textBox3.TabIndex = 3;
@@ -83,7 +83,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(132, 244);
+            this.textBox4.Location = new System.Drawing.Point(177, 244);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(208, 23);
             this.textBox4.TabIndex = 4;
@@ -92,7 +92,7 @@
             // Question_type
             // 
             this.Question_type.FormattingEnabled = true;
-            this.Question_type.Location = new System.Drawing.Point(132, 83);
+            this.Question_type.Location = new System.Drawing.Point(177, 83);
             this.Question_type.Name = "Question_type";
             this.Question_type.Size = new System.Drawing.Size(208, 23);
             this.Question_type.TabIndex = 5;
@@ -145,7 +145,7 @@
             // 
             // Addbtn
             // 
-            this.Addbtn.Location = new System.Drawing.Point(51, 278);
+            this.Addbtn.Location = new System.Drawing.Point(147, 273);
             this.Addbtn.Name = "Addbtn";
             this.Addbtn.Size = new System.Drawing.Size(75, 23);
             this.Addbtn.TabIndex = 12;
@@ -155,7 +155,7 @@
             // 
             // deletebtn
             // 
-            this.deletebtn.Location = new System.Drawing.Point(132, 278);
+            this.deletebtn.Location = new System.Drawing.Point(228, 273);
             this.deletebtn.Name = "deletebtn";
             this.deletebtn.Size = new System.Drawing.Size(75, 23);
             this.deletebtn.TabIndex = 13;
@@ -165,7 +165,7 @@
             // 
             // modifybtn
             // 
-            this.modifybtn.Location = new System.Drawing.Point(213, 278);
+            this.modifybtn.Location = new System.Drawing.Point(309, 273);
             this.modifybtn.Name = "modifybtn";
             this.modifybtn.Size = new System.Drawing.Size(75, 23);
             this.modifybtn.TabIndex = 14;
@@ -175,7 +175,7 @@
             // 
             // confirmbtn
             // 
-            this.confirmbtn.Location = new System.Drawing.Point(177, 307);
+            this.confirmbtn.Location = new System.Drawing.Point(273, 302);
             this.confirmbtn.Name = "confirmbtn";
             this.confirmbtn.Size = new System.Drawing.Size(75, 23);
             this.confirmbtn.TabIndex = 15;
@@ -194,7 +194,7 @@
             // 
             // Cancelbtn
             // 
-            this.Cancelbtn.Location = new System.Drawing.Point(96, 307);
+            this.Cancelbtn.Location = new System.Drawing.Point(192, 302);
             this.Cancelbtn.Name = "Cancelbtn";
             this.Cancelbtn.Size = new System.Drawing.Size(75, 23);
             this.Cancelbtn.TabIndex = 17;
@@ -205,7 +205,7 @@
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Location = new System.Drawing.Point(132, 9);
+            this.titleLabel.Location = new System.Drawing.Point(195, 9);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(27, 15);
             this.titleLabel.TabIndex = 18;
