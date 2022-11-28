@@ -218,7 +218,7 @@ namespace ExamenForm
                 else
                 {
                     int id_Q = new Random().Next(0000, 9999);
-                    Exm.addQuestion(id_Q, Qnum, "Oueverte", textBox2.Text);
+                    Exm.addQuestion(id_Q, Qnum, "Ouverte", textBox2.Text);
                     LoadQuestionInitial();
                 }
             }
