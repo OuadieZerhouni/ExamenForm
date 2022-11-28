@@ -172,7 +172,7 @@ namespace ExamenForm
         {
             cmd.Connection = cnx;
             cmd.Parameters.Clear();
-            cmd.CommandText = "select id_Q from Question where Qnum=@num";
+            cmd.CommandText = "select id_Q from Question where num=@num";
             cnx.Open();
             cmd.Parameters.AddWithValue("@num", num);
             var id = cmd.ExecuteScalar();
