@@ -170,7 +170,7 @@ namespace ExamenForm
                 if (Exm.QuestionExists(Qnum))
                 {
                     MessageBox.Show("Question existe deja");
-                    LoadAddOueverte();
+                    LaodAddQCM();
                 }
                 else
                 {
