@@ -77,6 +77,16 @@ namespace ExamenForm
                 }
             }
         }
+        //QuestionExists
+        public bool QuestionExists(int num)
+        {
+            foreach (Question q in questions)
+            {
+                if (q.GetQ_num() == num)
+                    return true;
+            }
+            return false;
+        }
        
     }
 }
