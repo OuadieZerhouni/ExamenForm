@@ -210,6 +210,17 @@ namespace ExamenForm
             cmd.ExecuteNonQuery();
             cnx.Close();
         }
+        public static void ModifyP_Text(int id_P, string text_P)
+        {
+            cmd.Connection = cnx;
+            cmd.Parameters.Clear();
+            cmd.CommandText = "update Proposition set text_P=@text_P where id_P=@id_P";
+            cnx.Open();
+            cmd.Parameters.AddWithValue("@id_P", id_P);
+            cmd.Parameters.AddWithValue("@text_P", text_P);
+            cmd.ExecuteNonQuery();
+            cnx.Close();
+        }
 
         
 

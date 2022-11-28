@@ -32,6 +32,7 @@ namespace ExamenForm
         public void SetP_text(String Ennonce)
         {
             this.P_text = Ennonce;
+            
         }
         public String GetP_text()
         {
