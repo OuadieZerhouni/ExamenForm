@@ -109,7 +109,7 @@ namespace ExamenForm
         private void modifybtn_Click(object sender, EventArgs e)
         {
             //modify question of num in textbox1 text with the text of the textbox 2
-            int Qnum = Convert.ToInt32(textBox1.Text);
+            Int16.TryParse(textBox1.Text, out short Qnum);
             Question q = Exm.getQuestionByNum(Qnum);
             q.SetQ_text(textBox2.Text);
             String type = q.GetQ_type();
