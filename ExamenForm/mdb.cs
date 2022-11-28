@@ -169,24 +169,7 @@ namespace ExamenForm
             cnx.Close();
         }
         
-        public static int GetQ_id(int num)
-        {
-            cmd.Connection = cnx;
-            cmd.Parameters.Clear();
-            cmd.CommandText = "select id_Q from Question where num=@num";
-            cnx.Open();
-            cmd.Parameters.AddWithValue("@num", num);
-            var id = cmd.ExecuteScalar();
-            cnx.Close();
-            if (id != null)
-            {
-                return int.Parse(id.ToString());
-            }
-            else
-            {
-                return 0;
-            }
-        }
+        
         
 
 

@@ -59,6 +59,15 @@ namespace ExamenForm
             }
             return null;
         }
+        public int getQ_id(int num)
+        {
+            foreach (Question q in questions)
+            {
+                if (q.GetQ_num() == num)
+                    return q.Getid_Q();
+            }
+            return 0;
+        }
         public int Getid_E()
         {
             return id;
@@ -66,7 +75,7 @@ namespace ExamenForm
         //deletquestion 
         public void deleteQuestion(int Qnum)
         {
-            int id=mdb.GetQ_id(Qnum);
+            int id=getQ_id(Qnum);
             mdb.DeleteQuestion(id);
             foreach (Question q in questions)
             {
