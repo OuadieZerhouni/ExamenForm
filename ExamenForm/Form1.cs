@@ -91,6 +91,18 @@ namespace ExamenForm
 
         private void deletebtn_Click(object sender, EventArgs e)
         {
+            if (titleLabel.Text == "Questions")
+            {
+                int Qnum = Convert.ToInt32(selectCombo.Text);
+                Exm.deleteQuestion(Qnum);
+                LoadQuestionInitial();
+            }
+            // else if (titleLabel.Text == "Propositions")
+            // {
+            //     int Pnum = Convert.ToInt32(selectCombo.Text);
+            //     Exm.deleteProposition(Pnum);
+            //     LoadPropositionInitial();
+            // }
 
         }
 
@@ -98,11 +110,12 @@ namespace ExamenForm
         {
             //modify question of num in textbox1 text with the text of the textbox 2
             int Qnum = Convert.ToInt32(textBox1.Text);
-            QuestionQcm q = (QuestionQcm)Exm.getQuestionByNum(Qnum);
+            Question q = Exm.getQuestionByNum(Qnum);
             q.SetQ_text(textBox2.Text);
             String type = q.GetQ_type();
             if (type == "QCM")
-            {
+            {   
+                QuestionQcm q1 = (QuestionQcm)q;
                 LoadAddProp(q.GetNumProp(), q.GetQ_num());
                 titleLabel.Text = "modifier Propostion";
                 textBox1.Text = q.getPropositionText(1);

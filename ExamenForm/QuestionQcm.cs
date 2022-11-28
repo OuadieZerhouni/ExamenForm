@@ -44,7 +44,7 @@ namespace ExamenForm
         
         public String getPropositionText(int Num)
         {
-            return propositions.Find(x => x.Getid_Q() == Num).GetP_text();
+            return propositions.Find(x => x.GetP_num() == Num).GetP_text();
         }
         public int GetNumProp()
         {
