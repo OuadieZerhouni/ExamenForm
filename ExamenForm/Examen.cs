@@ -64,9 +64,9 @@ namespace ExamenForm
             return id;
         }
         //deletquestion 
-        public void deleteQuestion(int id)
+        public void deleteQuestion(int Qnum)
         {
-            
+            int id=mdb.GetQ_id(Qnum);
             mdb.DeleteQuestion(id);
             foreach (Question q in questions)
             {
