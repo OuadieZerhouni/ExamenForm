@@ -159,11 +159,19 @@ namespace ExamenForm
 
             }
             else if (titleLabel.Text == "Ajouter QCM")
-            {   //convert to int the textbox1 text
+            { 
                 int Qnum = Convert.ToInt32(textBox1.Text);
-                int id_Q = new Random().Next(0000, 9999);
-                Exm.addQuestion(id_Q, Qnum, "QCM", textBox2.Text);
-                LoadAddProp(int.Parse(textBox3.Text), Qnum);
+               if(Exm.QuestionExists(Qnum))
+                {
+                    MessageBox.Show("Question existe deja");
+                    LoadAddOueverte();
+                }
+                else
+                {
+                     int id_Q = new Random().Next(0000, 9999);
+                    Exm.addQuestion(id_Q, Qnum, "QCM", textBox2.Text);
+                    LoadAddProp(int.Parse(textBox3.Text), Qnum);
+                }
 
             }
             else if (titleLabel.Text == "Ajouter Prop")
@@ -202,9 +210,17 @@ namespace ExamenForm
             else if (titleLabel.Text == "Ajouter Question Oueverte")
             {
                 int Qnum = Convert.ToInt32(textBox1.Text);
-                int id_Q = new Random().Next(0000, 9999);
-                Exm.addQuestion(id_Q, Qnum, "Ouverte", textBox2.Text);
-                LoadQuestionInitial();
+                if(Exm.QuestionExists(Qnum))
+                {
+                    MessageBox.Show("Question existe deja");
+                    LoadAddOueverte();
+                }
+                else
+                {
+                    int id_Q = new Random().Next(0000, 9999);
+                    Exm.addQuestion(id_Q, Qnum, "Oueverte", textBox2.Text);
+                    LoadQuestionInitial();
+                }
             }
            
 
