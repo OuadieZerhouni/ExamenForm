@@ -110,26 +110,30 @@ namespace ExamenForm
         {
             int Qnum = Convert.ToInt32(textBox1.Text);
             Question q = Exm.getQuestionByNum(Qnum);
-            q.SetQ_text(textBox2.Text);
             String type = q.GetQ_type();
             if (type == "QCM")
-            {   
+            {
+                q.SetQ_text(textBox2.Text);
                 QuestionQcm q1 = (QuestionQcm)q;
                 LoadAddProp(q1.GetNbrProp(), q.GetQ_num());
                 titleLabel.Text = "modifier Propostion";
                 textBox1.Text = q1.getPropositionText(1);
                 textBox2.Text = q1.getPropositionText(2);
-                if(q1.GetNbrProp() == 3)
+                if (q1.GetNbrProp() == 3)
                 {
                     textBox3.Text = q1.getPropositionText(3);
                 }
-                else if(q1.GetNbrProp() == 4)
+                else if (q1.GetNbrProp() == 4)
                 {
                     textBox3.Text = q1.getPropositionText(3);
                     textBox4.Text = q1.getPropositionText(4);
                 }
-                
 
+
+            }
+            else if (type == "Ouverte")
+            {
+                q.SetQ_text(textBox2.Text);
             }
 
         }
@@ -158,16 +162,16 @@ namespace ExamenForm
 
             }
             else if (titleLabel.Text == "Ajouter QCM")
-            { 
+            {
                 int Qnum = Convert.ToInt32(textBox1.Text);
-               if(Exm.QuestionExists(Qnum))
+                if (Exm.QuestionExists(Qnum))
                 {
                     MessageBox.Show("Question existe deja");
                     LoadAddOueverte();
                 }
                 else
                 {
-                     int id_Q = new Random().Next(0000, 9999);
+                    int id_Q = new Random().Next(0000, 9999);
                     Exm.addQuestion(id_Q, Qnum, "QCM", textBox2.Text);
                     LoadAddProp(int.Parse(textBox3.Text), Qnum);
                 }
@@ -196,7 +200,7 @@ namespace ExamenForm
 
                 LoadQuestionInitial();
             }
-             else if (titleLabel.Text == "modifier Propostion")
+            else if (titleLabel.Text == "modifier Propostion")
             {
                 int Qnum = Convert.ToInt32(textBox1.Text);
                 QuestionQcm q = (QuestionQcm)Exm.getQuestionByNum(Qnum);
@@ -209,7 +213,7 @@ namespace ExamenForm
             else if (titleLabel.Text == "Ajouter Question Oueverte")
             {
                 int Qnum = Convert.ToInt32(textBox1.Text);
-                if(Exm.QuestionExists(Qnum))
+                if (Exm.QuestionExists(Qnum))
                 {
                     MessageBox.Show("Question existe deja");
                     LoadAddOueverte();
@@ -221,7 +225,7 @@ namespace ExamenForm
                     LoadQuestionInitial();
                 }
             }
-           
+
 
         }
         private void loadInitial()
@@ -321,10 +325,18 @@ namespace ExamenForm
         }
         private void LoadAddProp(int i, int Qnum)
         {
+            selectCombo.Visible = false;
             titleLabel.Visible = true;
             titleLabel.Text = "Ajouter Prop";
             SelectLabel.Visible = true;
             SelectLabel.Text = Qnum.ToString();
+            label1.Text = "P-1";
+            label2.Text = "P-2";
+            modifybtn.Visible = false;
+            deletebtn.Visible = false;
+            Addbtn.Visible = false;
+            Cancelbtn.Visible = true;
+            confirmbtn.Visible = true;
             if (i == 2)
             {
                 textBox3.Visible = false;
@@ -338,13 +350,14 @@ namespace ExamenForm
             }
             else if (i == 4)
             {
+                label3.Text = "P-3";
                 label4.Text = "P-4";
                 textBox3.Visible = true;
                 textBox4.Visible = true;
             }
 
-            label1.Text = "P-1";
-            label2.Text = "P-2";
+            
+
 
 
 
@@ -360,7 +373,9 @@ namespace ExamenForm
             SelectLabel.Visible = false;
             Question_type.Visible = false;
             textBox1.Visible = true;
+            textBox1.Text = "";
             textBox2.Visible = true;
+            textBox2.Text = "";
             textBox3.Visible = false;
             textBox4.Visible = false;
             Addbtn.Visible = false;
