@@ -17,7 +17,7 @@ namespace ExamenForm
             this.id_Q = id;
             this.Q_num = num;
             this.Q_text = text;
-            this.Q_type = "Qcm";
+            this.Q_type = "QCM";
             mdb.AddQuestion(id_Q, id_E, Q_num, Q_type, Q_text);
         }
        
