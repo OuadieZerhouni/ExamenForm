@@ -119,6 +119,7 @@ namespace ExamenForm
                 titleLabel.Text = "modifier Propostion";
                 textBox1.Text = q1.getPropositionText(1);
                 textBox2.Text = q1.getPropositionText(2);
+                label1.Text = Qnum.ToString();
                 if (q1.GetNbrProp() == 3)
                 {
                     textBox3.Text = q1.getPropositionText(3);
@@ -202,7 +203,7 @@ namespace ExamenForm
             }
             else if (titleLabel.Text == "modifier Propostion")
             {
-                int Qnum = Convert.ToInt32(textBox1.Text);
+                int Qnum = Convert.ToInt32(label1.Text);
                 QuestionQcm q = (QuestionQcm)Exm.getQuestionByNum(Qnum);
                 q.setPropositionText(1, textBox1.Text);
                 q.setPropositionText(2, textBox2.Text);
