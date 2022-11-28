@@ -137,7 +137,7 @@ namespace ExamenForm
         }
         public static void DeleteQuestion(int id_Q)
         {   
-            if (GetTypeQuestion(id_Q) == "Qcm")
+            if (GetTypeQuestion(id_Q) == "QCM")
             {
                 cmd.Connection = cnx;
                 cmd.Parameters.Clear();
