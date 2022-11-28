@@ -115,11 +115,10 @@ namespace ExamenForm
             {
                 q.SetQ_text(textBox2.Text);
                 QuestionQcm q1 = (QuestionQcm)q;
-                LoadAddProp(q1.GetNbrProp(), q.GetQ_num());
+                LoadAddProp(q1.GetNbrProp(), Qnum);
                 titleLabel.Text = "modifier Propostion";
                 textBox1.Text = q1.getPropositionText(1);
                 textBox2.Text = q1.getPropositionText(2);
-                label1.Text = Qnum.ToString();
                 if (q1.GetNbrProp() == 3)
                 {
                     textBox3.Text = q1.getPropositionText(3);
@@ -207,8 +206,15 @@ namespace ExamenForm
                 QuestionQcm q = (QuestionQcm)Exm.getQuestionByNum(Qnum);
                 q.setPropositionText(1, textBox1.Text);
                 q.setPropositionText(2, textBox2.Text);
-                q.setPropositionText(3, textBox3.Text);
-                q.setPropositionText(4, textBox4.Text);
+                if (textBox3.Visible)
+                {
+                    q.setPropositionText(3, textBox3.Text);
+                }
+                if (textBox4.Visible)
+                {
+                    q.setPropositionText(4, textBox4.Text);
+                }
+                
                 LoadQuestionInitial();
             }
             else if (titleLabel.Text == "Ajouter Question Oueverte")
