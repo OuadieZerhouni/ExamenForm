@@ -27,6 +27,7 @@ namespace ExamenForm
         public static void AddExam(int id ,string date, string theme)
         {
             cmd.Connection = cnx;
+            cmd.Parameters.Clear();
             cmd.CommandText = "insert into Exam values(@id,@date,@theme)";
             cnx.Open();
             cmd.Parameters.AddWithValue("@id", id);
@@ -67,14 +68,20 @@ namespace ExamenForm
         public static void ModifyExam(int id, string date, string theme)
         {
             cmd.Connection = cnx;
-            cmd.CommandText = "update Exam set date_E='" + date + "',theme='" + theme + "' where id_E=" + id;
+            cmd.Parameters.Clear();
+            cmd.CommandText = "update Exam set date_E=@date,theme_E=@theme where id_E=@id";
             cnx.Open();
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@date", date);
+            cmd.Parameters.AddWithValue("@theme", theme);
+            
             cmd.ExecuteNonQuery();
             cnx.Close();
         }
         public static void ModifyQuestion(int id_Q, int id_E, int num_Q, string type_Q, string text_Q)
         {
             cmd.Connection = cnx;
+            cmd.Parameters.Clear();
             cmd.CommandText = "update Question set id_E=@id_E,num_Q=@num_Q,type_Q=@type_Q,text_Q=@text_Q where id_Q=@id_Q";
             cnx.Open();
             cmd.Parameters.AddWithValue("@id_Q", id_Q);
@@ -88,20 +95,20 @@ namespace ExamenForm
         public static void ModifyProposition(int id_P, int id_Q, int num_P, string text_P)
         {
             cmd.Connection = cnx;
+            cmd.Parameters.Clear();
             cmd.CommandText = "update Proposition set id_Q=@id_Q,num_P=@num_P,text_P=@text_P where id_P=@id_P";
             cnx.Open();
             cmd.Parameters.AddWithValue("@id_P", id_P);
             cmd.Parameters.AddWithValue("@id_Q", id_Q);
             cmd.Parameters.AddWithValue("@num_P", num_P);
             cmd.Parameters.AddWithValue("@text_P", text_P);
-
-        
             cmd.ExecuteNonQuery();
             cnx.Close();
         }
 
         public static String GetTypeQuestion(int id_Q){
             cmd.Connection = cnx;
+            cmd.Parameters.Clear();
             cmd.CommandText = "select type_Q from Question where id_Q=@id_Q";
             cnx.Open();
             cmd.Parameters.AddWithValue("@id_Q", id_Q);
@@ -113,6 +120,7 @@ namespace ExamenForm
         public static void DeleteProposition(int id_P)
         {
             cmd.Connection = cnx;
+            cmd.Parameters.Clear();
             cmd.CommandText = "delete from Proposition where id_P=@id_P";
             cnx.Open();
             cmd.Parameters.AddWithValue("@id_P", id_P);
@@ -124,14 +132,19 @@ namespace ExamenForm
             if (GetTypeQuestion(id_Q) == "Qcm")
             {
                 cmd.Connection = cnx;
-                cmd.CommandText = "delete from Proposition where id_Q=" + id_Q;
+                cmd.Parameters.Clear();
+                cmd.CommandText = "delete from Proposition where id_Q=@id_Q";
                 cnx.Open();
+                cmd.Parameters.AddWithValue("@id_Q", id_Q);
                 cmd.ExecuteNonQuery();
+
                 cnx.Close();
             }
             cmd.Connection = cnx;
-            cmd.CommandText = "delete from Question where id_Q=" + id_Q;
+            cmd.Parameters.Clear();
+            cmd.CommandText = "delete from Question where id_Q=@id_Q";
             cnx.Open();
+            cmd.Parameters.AddWithValue("@id_Q", id_Q);
             cmd.ExecuteNonQuery();
             cnx.Close();
             
@@ -140,6 +153,7 @@ namespace ExamenForm
         public static void DeleteExam(int id)
         {
             cmd.Connection = cnx;
+            cmd.Parameters.Clear();
             cmd.CommandText = "delete from Exam where id_E=@id";
             cnx.Open();
             cmd.Parameters.AddWithValue("@id", id);
