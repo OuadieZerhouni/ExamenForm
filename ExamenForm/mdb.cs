@@ -112,9 +112,16 @@ namespace ExamenForm
             cmd.CommandText = "select type_Q from Question where id_Q=@id_Q";
             cnx.Open();
             cmd.Parameters.AddWithValue("@id_Q", id_Q);
-            String type = cmd.ExecuteScalar().ToString();
-            cnx.Close();
-            return type;
+            var type = cmd.ExecuteScalar();
+            if (type != null)
+            {
+                return type.ToString();
+            }
+            else
+            {
+                return null;
+            }
+            
 
         }
         public static void DeleteProposition(int id_P)
@@ -127,8 +134,8 @@ namespace ExamenForm
             cmd.ExecuteNonQuery();
             cnx.Close();
         }
-        public static void DeleteQuestion(int id_Q)
-        {
+        public static void DeleteQuestion(int Q_num)
+        {   int id_Q = GetQ_id(Q_num);
             if (GetTypeQuestion(id_Q) == "Qcm")
             {
                 cmd.Connection = cnx;
@@ -159,6 +166,24 @@ namespace ExamenForm
             cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();
             cnx.Close();
+        }
+        
+        public static int GetQ_id(int num)
+        {
+            cmd.Connection = cnx;
+            cmd.Parameters.Clear();
+            cmd.CommandText = "select id_Q from Question where num_Q=@num";
+            cnx.Open();
+            cmd.Parameters.AddWithValue("@num", num);
+            var id = cmd.ExecuteScalar();
+            if (id != null)
+            {
+                return int.Parse(id.ToString());
+            }
+            else
+            {
+                return 0;
+            }
         }
         
 
