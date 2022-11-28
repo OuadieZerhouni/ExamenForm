@@ -23,7 +23,6 @@ namespace ExamenForm
         //setexam to modify exam 
         public void setExam(int id, String date, String theme)
         {
-            this.id = id;
             this.date = date;
             this.theme = theme;
             mdb.ModifyExam(id, date, theme);
@@ -64,5 +63,21 @@ namespace ExamenForm
         {
             return id;
         }
+        //deletquestion 
+        public void deleteQuestion(int id)
+        {
+
+            mdb.DeleteQuestion(id);
+            //delete from list
+            foreach (Question q in questions)
+            {
+                if (q.Getid_Q() == id)
+                {
+                    questions.Remove(q);
+                    break;
+                }
+            }
+        }
+       
     }
 }
