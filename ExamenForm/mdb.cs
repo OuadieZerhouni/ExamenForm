@@ -113,6 +113,7 @@ namespace ExamenForm
             cnx.Open();
             cmd.Parameters.AddWithValue("@id_Q", id_Q);
             var type = cmd.ExecuteScalar();
+            cnx.Close();
             if (type != null)
             {
                 return type.ToString();
@@ -176,6 +177,7 @@ namespace ExamenForm
             cnx.Open();
             cmd.Parameters.AddWithValue("@num", num);
             var id = cmd.ExecuteScalar();
+            cnx.Close();
             if (id != null)
             {
                 return int.Parse(id.ToString());
