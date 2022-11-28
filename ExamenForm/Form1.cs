@@ -202,7 +202,7 @@ namespace ExamenForm
             }
             else if (titleLabel.Text == "modifier Propostion")
             {
-                int Qnum = Convert.ToInt32(label1.Text);
+                int Qnum = Convert.ToInt32(SelectLabel.Text);
                 QuestionQcm q = (QuestionQcm)Exm.getQuestionByNum(Qnum);
                 q.setPropositionText(1, textBox1.Text);
                 q.setPropositionText(2, textBox2.Text);
