@@ -1,3 +1,6 @@
+using System.Data;
+
+
 namespace ExamenForm
 {
     public partial class Form1 : Form
@@ -417,17 +420,24 @@ namespace ExamenForm
             combo.Items.Add("Ouverte");
         }
 
-        private void dataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
 
         private void Select_Q_Click(object sender, EventArgs e)
         {
+            DataTable dt = mdb.GetQuestions(Exm.Getid_E());
+            dataGrid.DataSource = dt;
+                
+
 
         }
 
         private void Select_P_Click(object sender, EventArgs e)
+        {
+            DataTable dt = mdb.GetPropositions(Exm.Getid_E());
+            dataGrid.DataSource = dt;
+
+        }
+        private void dataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

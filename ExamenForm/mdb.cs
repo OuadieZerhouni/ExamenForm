@@ -169,7 +169,36 @@ namespace ExamenForm
             cnx.Close();
         }
         
-        
+        //get question of exam
+        public static DataTable GetQuestions(int id_E)
+        {
+            cmd.Connection = cnx;
+            cmd.Parameters.Clear();
+            cmd.CommandText = "select * from Question where id_E=@id_E";
+            cnx.Open();
+            cmd.Parameters.AddWithValue("@id_E", id_E);
+            var reader = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(reader);
+            cnx.Close();
+            return dt;
+        }
+        //get propositions of exam
+        public static DataTable GetPropositions(int id_E)
+        {
+            cmd.Connection = cnx;
+            cmd.Parameters.Clear();
+            cmd.CommandText = "select * from Proposition where id_Q in (select id_Q from Question where id_E=@id_E)";
+            cnx.Open();
+            cmd.Parameters.AddWithValue("@id_E", id_E);
+            var reader = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(reader);
+            cnx.Close();
+            return dt;
+           
+        }
+
         
 
 
