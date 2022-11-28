@@ -31,6 +31,7 @@ namespace ExamenForm
         public void SetQ_text(String Ennonce)
         {
             this.Q_text = Ennonce;
+            mdb.ModifyQ_Text(id_Q, Q_text);
         }
         public String GetQ_text()
         {

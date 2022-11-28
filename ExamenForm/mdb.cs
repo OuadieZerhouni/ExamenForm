@@ -198,6 +198,18 @@ namespace ExamenForm
             return dt;
            
         }
+        //modifyQuestionText
+        public static void ModifyQ_Text(int id_Q, string text_Q)
+        {
+            cmd.Connection = cnx;
+            cmd.Parameters.Clear();
+            cmd.CommandText = "update Question set text_Q=@text_Q where id_Q=@id_Q";
+            cnx.Open();
+            cmd.Parameters.AddWithValue("@id_Q", id_Q);
+            cmd.Parameters.AddWithValue("@text_Q", text_Q);
+            cmd.ExecuteNonQuery();
+            cnx.Close();
+        }
 
         
 
