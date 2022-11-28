@@ -135,8 +135,8 @@ namespace ExamenForm
             cmd.ExecuteNonQuery();
             cnx.Close();
         }
-        public static void DeleteQuestion(int Q_num)
-        {   int id_Q = GetQ_id(Q_num);
+        public static void DeleteQuestion(int id_Q)
+        {   
             if (GetTypeQuestion(id_Q) == "Qcm")
             {
                 cmd.Connection = cnx;
