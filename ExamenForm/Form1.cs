@@ -114,7 +114,7 @@ namespace ExamenForm
             if (type == "QCM")
             {
                 q.SetQ_text(textBox2.Text);
-                Question q1 = (QuestionQcm)q;
+                QuestionQcm q1 = (QuestionQcm)q;
                 LoadAddProp(q1.GetNbrProp(), q.GetQ_num());
                 titleLabel.Text = "modifier Propostion";
                 textBox1.Text = q1.getPropositionText(1);
