@@ -182,7 +182,7 @@ namespace ExamenForm
             }
             else if (titleLabel.Text == "Ajouter Prop")
             {
-                int Qnum = Convert.ToInt32(textBox1.Text);
+                int Qnum = Convert.ToInt32(SelectLabel.Text);
                 QuestionQcm q = (QuestionQcm)Exm.getQuestionByNum(Qnum);
                 int id_Q = q.Getid_Q();
 
@@ -365,6 +365,11 @@ namespace ExamenForm
                 textBox3.Visible = true;
                 textBox4.Visible = true;
             }
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+
 
             
 
