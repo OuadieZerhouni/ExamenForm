@@ -68,7 +68,6 @@ namespace ExamenForm
         {
 
             mdb.DeleteQuestion(id);
-            //delete from list
             foreach (Question q in questions)
             {
                 if (q.Getid_Q() == id)
