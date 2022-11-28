@@ -46,6 +46,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Cancelbtn = new System.Windows.Forms.Button();
             this.titleLabel = new System.Windows.Forms.Label();
+            this.Select_Q = new System.Windows.Forms.Button();
+            this.Select_P = new System.Windows.Forms.Button();
+            this.dataGrid = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // selectCombo
@@ -145,7 +149,7 @@
             // 
             // Addbtn
             // 
-            this.Addbtn.Location = new System.Drawing.Point(147, 273);
+            this.Addbtn.Location = new System.Drawing.Point(167, 273);
             this.Addbtn.Name = "Addbtn";
             this.Addbtn.Size = new System.Drawing.Size(75, 23);
             this.Addbtn.TabIndex = 12;
@@ -155,7 +159,7 @@
             // 
             // deletebtn
             // 
-            this.deletebtn.Location = new System.Drawing.Point(228, 273);
+            this.deletebtn.Location = new System.Drawing.Point(248, 273);
             this.deletebtn.Name = "deletebtn";
             this.deletebtn.Size = new System.Drawing.Size(75, 23);
             this.deletebtn.TabIndex = 13;
@@ -165,7 +169,7 @@
             // 
             // modifybtn
             // 
-            this.modifybtn.Location = new System.Drawing.Point(309, 273);
+            this.modifybtn.Location = new System.Drawing.Point(329, 273);
             this.modifybtn.Name = "modifybtn";
             this.modifybtn.Size = new System.Drawing.Size(75, 23);
             this.modifybtn.TabIndex = 14;
@@ -175,7 +179,7 @@
             // 
             // confirmbtn
             // 
-            this.confirmbtn.Location = new System.Drawing.Point(273, 302);
+            this.confirmbtn.Location = new System.Drawing.Point(293, 302);
             this.confirmbtn.Name = "confirmbtn";
             this.confirmbtn.Size = new System.Drawing.Size(75, 23);
             this.confirmbtn.TabIndex = 15;
@@ -194,7 +198,7 @@
             // 
             // Cancelbtn
             // 
-            this.Cancelbtn.Location = new System.Drawing.Point(192, 302);
+            this.Cancelbtn.Location = new System.Drawing.Point(212, 302);
             this.Cancelbtn.Name = "Cancelbtn";
             this.Cancelbtn.Size = new System.Drawing.Size(75, 23);
             this.Cancelbtn.TabIndex = 17;
@@ -205,18 +209,51 @@
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Location = new System.Drawing.Point(195, 9);
+            this.titleLabel.Location = new System.Drawing.Point(262, 9);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(27, 15);
             this.titleLabel.TabIndex = 18;
             this.titleLabel.Text = "title";
             this.titleLabel.Click += new System.EventHandler(this.titleLabel_Click);
             // 
+            // Select_Q
+            // 
+            this.Select_Q.Location = new System.Drawing.Point(490, 273);
+            this.Select_Q.Name = "Select_Q";
+            this.Select_Q.Size = new System.Drawing.Size(75, 23);
+            this.Select_Q.TabIndex = 19;
+            this.Select_Q.Text = "Questions";
+            this.Select_Q.UseVisualStyleBackColor = true;
+            this.Select_Q.Click += new System.EventHandler(this.Select_Q_Click);
+            // 
+            // Select_P
+            // 
+            this.Select_P.Location = new System.Drawing.Point(571, 273);
+            this.Select_P.Name = "Select_P";
+            this.Select_P.Size = new System.Drawing.Size(75, 23);
+            this.Select_P.TabIndex = 20;
+            this.Select_P.Text = "Propositions";
+            this.Select_P.UseVisualStyleBackColor = true;
+            this.Select_P.Click += new System.EventHandler(this.Select_P_Click);
+            // 
+            // dataGrid
+            // 
+            this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid.Location = new System.Drawing.Point(439, 47);
+            this.dataGrid.Name = "dataGrid";
+            this.dataGrid.RowTemplate.Height = 25;
+            this.dataGrid.Size = new System.Drawing.Size(263, 208);
+            this.dataGrid.TabIndex = 21;
+            this.dataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellContentClick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(573, 342);
+            this.ClientSize = new System.Drawing.Size(713, 344);
+            this.Controls.Add(this.dataGrid);
+            this.Controls.Add(this.Select_P);
+            this.Controls.Add(this.Select_Q);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.Cancelbtn);
             this.Controls.Add(this.label2);
@@ -238,6 +275,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,5 +301,8 @@
         private Label label2;
         private Button Cancelbtn;
         private Label titleLabel;
+        private Button Select_Q;
+        private Button Select_P;
+        private DataGridView dataGrid;
     }
 }

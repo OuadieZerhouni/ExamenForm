@@ -417,5 +417,19 @@ namespace ExamenForm
             combo.Items.Add("Ouverte");
         }
 
+        private void dataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Select_Q_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Select_P_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
