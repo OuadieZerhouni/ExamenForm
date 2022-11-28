@@ -109,7 +109,7 @@ namespace ExamenForm
         private void modifybtn_Click(object sender, EventArgs e)
         {
             //modify question of num in textbox1 text with the text of the textbox 2
-            Int32.TryParse(textBox1.Text, out int Qnum);
+            int Qnum = Convert.ToInt32(textBox1.Text);
             Question q = Exm.getQuestionByNum(Qnum);
             q.SetQ_text(textBox2.Text);
             String type = q.GetQ_type();
@@ -160,15 +160,15 @@ namespace ExamenForm
             }
             else if (titleLabel.Text == "Ajouter QCM")
             {   //convert to int the textbox1 text
-                Int32.TryParse(textBox1.Text, out int Q_num);
+                int Qnum = Convert.ToInt32(textBox1.Text);
                 int id_Q = new Random().Next(0000, 9999);
-                Exm.addQuestion(id_Q, Q_num, "QCM", textBox2.Text);
-                LoadAddProp(int.Parse(textBox3.Text), Q_num);
+                Exm.addQuestion(id_Q, Qnum, "QCM", textBox2.Text);
+                LoadAddProp(int.Parse(textBox3.Text), Qnum);
 
             }
             else if (titleLabel.Text == "Ajouter Prop")
             {
-                int.TryParse(textBox1.Text, out int Qnum);
+                int Qnum = Convert.ToInt32(textBox1.Text);
                 QuestionQcm q = (QuestionQcm)Exm.getQuestionByNum(Qnum);
                 int id_Q = q.Getid_Q();
 
